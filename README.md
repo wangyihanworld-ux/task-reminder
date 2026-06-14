@@ -2,6 +2,8 @@
 
 两个纯静态 HTML 事务提醒/闹钟应用，部署在腾讯云开发 CloudBase 静态托管。
 
+> 📦 GitHub: [https://github.com/wangyihanworld-ux/Wyhworld](https://github.com/wangyihanworld-ux/Wyhworld)
+
 ## 部署信息
 
 - **云开发环境**: wyhworld118-d3gm742wg27cd8686
