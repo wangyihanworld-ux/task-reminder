@@ -10,3 +10,4 @@ Thumbs.db
 dist/
 build/
 temp/
+push-to-github.bat
