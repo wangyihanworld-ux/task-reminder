@@ -1,0 +1,12 @@
+node_modules/
+.codebuddy/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+.idea/
+.vscode/
+dist/
+build/
+temp/
