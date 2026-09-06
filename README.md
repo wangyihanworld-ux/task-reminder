@@ -4,8 +4,8 @@
 
 ## 在线体验
 
-- [时刻台：关键事务提醒](https://wyhworld118-d3gm742wg27cd8686-1443397936.tcloudbaseapp.com/)
-- [晷：事务提醒中心](https://wyhworld118-d3gm742wg27cd8686-1443397936.tcloudbaseapp.com/%E4%BB%BB%E5%8A%A1%E6%8F%90%E9%86%92.html)
+- [时刻台：关键事务提醒](https://wangyihanworld-ux.github.io/Wyhworld./)
+- [晷：事务提醒中心](https://wangyihanworld-ux.github.io/Wyhworld./%E4%BB%BB%E5%8A%A1%E6%8F%90%E9%86%92.html)
 
 ## 功能
 
@@ -31,7 +31,7 @@
 
 ## 部署
 
-部署到任意静态托管服务即可。当前生产环境使用 CloudBase 静态托管；其中 `时刻台-任务闹钟提醒.html` 部署时应重命名为 `index.html`，`任务提醒.html` 保持原文件名。
+项目已发布到 GitHub Pages。根目录的 `index.html` 会自动跳转至 `时刻台-任务闹钟提醒.html`；`任务提醒.html` 保持原文件名，可通过上方链接直接访问。也可部署到任意支持静态文件的托管服务。
 
 ## 项目结构
 
