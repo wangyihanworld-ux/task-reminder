@@ -4,8 +4,8 @@
 
 ## 在线体验
 
-- [时刻台：关键事务提醒](https://wangyihanworld-ux.github.io/Wyhworld./)
-- [晷：事务提醒中心](https://wangyihanworld-ux.github.io/Wyhworld./%E4%BB%BB%E5%8A%A1%E6%8F%90%E9%86%92.html)
+- [时刻台：关键事务提醒](https://wangyihanworld-ux.github.io/task-reminder/)
+- [晷：事务提醒中心](https://wangyihanworld-ux.github.io/task-reminder/%E4%BB%BB%E5%8A%A1%E6%8F%90%E9%86%92.html)
 
 ## 功能
 
