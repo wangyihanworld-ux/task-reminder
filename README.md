@@ -1,5 +1,7 @@
 # 时刻台 & 晷：本地事务提醒
 
+[![tests](https://github.com/wangyihanworld-ux/task-reminder/actions/workflows/html-check.yml/badge.svg)](https://github.com/wangyihanworld-ux/task-reminder/actions/workflows/html-check.yml)
+
 两个无需后端的中文事务提醒网页：一个适合按时间与优先级统筹关键事项，一个内置番茄钟与子任务管理。数据只保存在当前浏览器中，适合个人日常规划。
 
 ## 在线体验
@@ -15,6 +17,7 @@
 - 浏览器通知、闹钟弹窗与稍后提醒
 - 深浅色主题、番茄钟（晷）
 - JSON 导入、导出与合并备份
+- 导入文件大小、任务数量、日期和枚举字段校验，避免异常备份污染本地数据
 
 ## 本地运行
 
@@ -22,6 +25,8 @@
 
 - `时刻台-任务闹钟提醒.html`
 - `任务提醒.html`
+
+如需运行自动化检查：`npm test`。
 
 如需使用浏览器通知，请通过本地 HTTP 服务或 HTTPS 站点访问，并在页面中主动允许通知权限。
 
