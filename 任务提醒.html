@@ -832,6 +832,25 @@ $("themeBtn").addEventListener("click",()=>{
 })();
 
 /* ---- 导出 / 导入 ---- */
+const MAX_IMPORT_BYTES=1024*1024;
+const MAX_IMPORT_TASKS=2000;
+function cleanText(value,maxLength){return typeof value==="string"?value.trim().slice(0,maxLength):"";}
+function normalizeImportedTask(raw,usedIds){
+  if(!raw||typeof raw!=="object"||Array.isArray(raw))return null;
+  const title=cleanText(raw.title,200);if(!title)return null;
+  const priorities=new Set(["high","mid","low"]),repeats=new Set(["none","daily","weekly"]);
+  const parsedTime=cleanText(raw.time,40);const time=parsedTime&&!Number.isNaN(Date.parse(parsedTime))?parsedTime:"";
+  let id=Number.isSafeInteger(raw.id)&&raw.id>0?raw.id:Date.now()+Math.floor(Math.random()*1e6);
+  while(usedIds.has(id))id=Date.now()+Math.floor(Math.random()*1e6);
+  usedIds.add(id);
+  const subtasks=Array.isArray(raw.subtasks)?raw.subtasks.slice(0,100).map((sub,index)=>({
+    id:Number.isSafeInteger(sub&&sub.id)&&sub.id>0?sub.id:id*1000+index+1,
+    title:cleanText(sub&&sub.title,200),done:Boolean(sub&&sub.done)
+  })).filter(sub=>sub.title):[];
+  return {id,title,note:cleanText(raw.note,2000),time,cat:cleanText(raw.cat,50)||"其他",
+    repeat:repeats.has(raw.repeat)?raw.repeat:"none",prio:priorities.has(raw.prio)?raw.prio:"mid",
+    done:Boolean(raw.done),fired:false,subtasks};
+}
 $("exportBtn").addEventListener("click",()=>{
   if(!tasks.length){toast("暂无数据可导出");return;}
   const blob=new Blob([JSON.stringify(tasks,null,2)],{type:"application/json"});
@@ -845,18 +864,19 @@ $("exportBtn").addEventListener("click",()=>{
 $("importBtn").addEventListener("click",()=>$("importFile").click());
 $("importFile").addEventListener("change",e=>{
   const file=e.target.files[0];if(!file)return;
+  if(file.size>MAX_IMPORT_BYTES){toast("文件超过 1 MB，导入已拒绝");e.target.value="";return;}
   const reader=new FileReader();
   reader.onload=()=>{
     try{
       const data=JSON.parse(reader.result);
-      if(!Array.isArray(data))throw 0;
+      if(!Array.isArray(data)||data.length>MAX_IMPORT_TASKS)throw 0;
       if(tasks.length && !confirm("导入将与现有事务合并，确定继续？")){e.target.value="";return;}
       const ids=new Set(tasks.map(t=>t.id));
       let n=0;
       data.forEach(t=>{
-        if(t&&t.title){
-          if(ids.has(t.id))t.id=Date.now()+Math.floor(Math.random()*1e6);
-          tasks.push({repeat:"none",fired:false,done:false,prio:"mid",cat:"其他",note:"",time:"",subtasks:[],...t});
+        const normalized=normalizeImportedTask(t,ids);
+        if(normalized){
+          tasks.push(normalized);
           n++;
         }
       });
