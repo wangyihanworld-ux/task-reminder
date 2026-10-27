@@ -1,5 +1,7 @@
 # 时刻台 & 晷：本地事务提醒
 
+[运行与最新验证](docs/validation-latest.md)
+
 [![tests](https://github.com/wangyihanworld-ux/task-reminder/actions/workflows/html-check.yml/badge.svg)](https://github.com/wangyihanworld-ux/task-reminder/actions/workflows/html-check.yml)
 
 两个无需后端的中文事务提醒网页：一个适合按时间与优先级统筹关键事项，一个内置番茄钟与子任务管理。数据只保存在当前浏览器中，适合个人日常规划。
@@ -49,4 +51,4 @@
 
 ## 开源许可
 
-暂未添加许可证。若计划接受复用或协作，建议补充 `MIT License`。
+代码采用 [MIT License](LICENSE)。

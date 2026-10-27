@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-27",
+  "tests": 2,
+  "subtests": 0,
+  "test_framework": "node:test",
+  "test_exit_code": 0,
+  "demo_exit_codes": {},
+  "source_sha256_lf_normalized": {
+    "index.html": "ea769f3c0413cba70c44fc868b08d7a19a4a0e46b31bbcb07f0254bcb02e6adf",
+    "tests/static.test.js": "e6c3e7811b24bbfb1001d4fa1759aa9e649b01ac004d4d6606fa2c56d8a28775",
+    "\u4efb\u52a1\u63d0\u9192.html": "f76786d72c43a09fc401afeadb929bdd6d10ef897fd1de37a8c0525776131916",
+    "\u65f6\u523b\u53f0-\u4efb\u52a1\u95f9\u949f\u63d0\u9192.html": "c3923019d5d0265694d69612285cb647c37ad8af353037168d52d43c169b8911"
+  },
+  "limits": "AI-assisted local verification; not evidence of deployment, user acceptance or business outcomes."
+}
